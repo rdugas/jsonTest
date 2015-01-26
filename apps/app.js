@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     
 
-    $("#chooseButton").click(function(event) {
+    $("#search-term").submit(function(event) {
     	
     	console.log("button hit");
     	console.log($('#query').val());
@@ -14,7 +14,7 @@ $(document).ready(function() {
     	event.preventDefault();
     	var searchTerm = $('#query').val();
     
-    	$.getJSON('http://www.omdbapi.com/?s=' + searchTerm + '&r=json', function(data) {
+    	$.getJSON(('https://www.omdbapi.com/?s=' + searchTerm + '&r=json'), function(data) {
         showResults(data.Search);
     	});
 		
