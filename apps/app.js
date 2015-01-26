@@ -1,11 +1,6 @@
 $(document).ready(function() {
 
-    // $.get("http://www.omdbapi.com/?s=Star%20Wars&r=xml", function(data){
-    // 	console.log(data);
-    // }, "xml")
-
     
-
     $("#search-term").submit(function(event) {
     	
     	console.log("button hit");
@@ -13,13 +8,16 @@ $(document).ready(function() {
 
     	event.preventDefault();
     	var searchTerm = $('#query').val();
+    	var searchString = 'https://www.omdbapi.com/?s=' + searchTerm + '&r=json';
+    	console.log(searchString);
     
     	$.getJSON(('https://www.omdbapi.com/?s=' + searchTerm + '&r=json'), function(data) {
+        console.log("get json called");
+        console.log(data.Search);
         showResults(data.Search);
     	});
 		
 	});
-
 
     function showResults(results) {
     	var html = "";
