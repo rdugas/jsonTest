@@ -11,7 +11,7 @@ $(document).ready(function() {
     	var searchString = 'https://www.omdbapi.com/?s=' + searchTerm + '&r=json';
     	console.log(searchString);
     
-    	$.getJSON(('https://www.omdbapi.com/?s=' + searchTerm + '&r=json'), function(data) {
+    	$.getJSON(('http://www.omdbapi.com/?s=' + searchTerm + '&r=json'), function(data) {
         console.log("get json called");
         console.log(data.Search);
         showResults(data.Search);
